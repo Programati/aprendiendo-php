@@ -160,3 +160,36 @@ echo"<pre>";
 print_r($f);
 echo"</pre>";
 
+
+//Zona horaria
+echo"<br>Zona horaria<br>Primero definir y luego usar la funcion DATE<br>";
+//Primero hay que definir la zona horaria
+date_default_timezone_set('America/Argentina/Buenos_Aires');
+//Funcion DATE
+echo $fechaArgentina=date('d-m-Y');
+
+echo "<hr>";
+echo"<br>Funciones normales<br>";
+
+function miFuncion(){
+    return 'Mi funcion!';
+}
+//Funcion escalar, funciones que reciben parámetros
+
+function miFuncion2($valorA,$valorB,$opcion){
+    switch ($opcion) {
+        case 'suma':
+            return "SUMA: ".$valorA + $valorB;
+            break;
+        case 'resta':
+            return "RESTA: ". $valorA - $valorB;
+            break;
+        case 'multiplicacion':
+            return  "MULTIPLICACION: ".$valorA * $valorB;
+            break;
+        default:
+            return  "No hay division";
+            break;
+    }
+}
+echo miFuncion2(2,2,'DIVISION');
